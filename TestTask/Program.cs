@@ -2,7 +2,13 @@
 // строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.
 
 string[] array = GetFirstArray(ReadInt("array length"));
+Console.WriteLine("First Array: ");
 PrintFirstArray(array);
+string[] newArray = GetNewArray(array);
+Console.WriteLine();
+Console.WriteLine("New Array: ");
+PrintNewArray(newArray);
+
 
 string[] GetFirstArray(int length)
 {
@@ -31,19 +37,26 @@ void PrintFirstArray(string[] array)
 	}
 }
 
-
-
-
-
-/*int[] GetArray(int length)
+string[] GetNewArray(string[] array)
 {
-	int[] array = new int[length];
+	string[] newArray = new string[array.Length];
 
 	for (int i = 0; i < array.Length; i++)
+	if (array[i].Length <= 3)
 	{
-		array[i] = ReadInt($"element {i}");
+		newArray[i] = array[i];
 	}
+	return newArray;
+}
 
-	return array;
-}*/
+void PrintNewArray(string[] newArray)
+{
+	for (int i = 0; i < array.Length; i++)
+	{
+		if (newArray[i] != null)
+		{
+		Console.Write($"{newArray[i]}, ");
+		}
+	}
+}
 
